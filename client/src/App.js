@@ -45,15 +45,28 @@ class App extends Component {
       }
     }
     let id = e.target.id;
-    let toStore = {
-      store: {
-        requester: name,
-        requested: storedVal(),
-        [name]: value
+    let toStore = function(){
+      if (name === 'hover.color' || name === 'hover.backgroundColor'){
+        let split = name.split('.');
+        return {store: {
+          hover: {
+            [split[1]]: storedVal()
+          }
+        }};
+      } else {
+        return {store: {
+          requester: name,
+          requested: storedVal(),
+          [name]: value,
+          hover: {
+            color: '',
+            backgroundColor: ''
+          }
+        }};
       }
-      
+      console.log(this.state.store);
     }
-    this.setState(toStore);
+    this.setState(toStore());
     
   }
   

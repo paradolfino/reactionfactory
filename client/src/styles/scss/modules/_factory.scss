@@ -1,0 +1,27 @@
+#page-factory {
+    align-items: center;
+    height: 900px;
+    border-bottom: 2px solid #394b68;
+    div {
+        padding-bottom: 50px;
+        #container {
+            height: 100%;
+            width: 100%;
+            form {
+                input {
+                    margin: 2px;
+                    height: 25px;
+                    font-size: 16px;
+                    text-align: center;
+                    border: 10px solid white;
+                    border-radius: 30px;
+                }
+            }
+        }
+
+    }
+}
+
+#hoverclass {
+    
+}
