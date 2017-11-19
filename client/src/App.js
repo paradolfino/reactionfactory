@@ -4,6 +4,7 @@ import './styles/css/App.css';
 /////////////////////////////////////////
 //pages//
 import Home from './components/pages/home';
+import Factory from './components/pages/factory';
 
 //elements//
 import Header from './components/elements/header';
@@ -14,22 +15,27 @@ class App extends Component {
     super(props);
     
     this.pages = {
-      Home
+      Home: Home,
+      Factory: Factory
     };
     
     this.state = {
-      page: this.pages["Home"]
+      page: "Home"
     };
     
-    
+    this.pageHandler = this.pageHandler.bind(this);
+  }
+  
+  pageHandler(val) {
+    this.setState({page:val});
   }
   
   render() {
-    let Page = this.state.page;
+    let Page = this.pages[this.state.page];
     return (
       <div className="App">
         <Header />
-        <Page />
+        <Page pageHandler={this.pageHandler}/>
       </div>
     );
   }
