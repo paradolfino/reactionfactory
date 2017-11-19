@@ -20,14 +20,45 @@ class App extends Component {
     };
     
     this.state = {
-      page: "Home"
+      page: "Home",
+      store: {
+        
+      }
     };
     
     this.pageHandler = this.pageHandler.bind(this);
+    this.inputHandler = this.inputHandler.bind(this);
   }
   
   pageHandler(val) {
-    this.setState({page:val});
+    this.setState({page: val});
+  }
+  
+  inputHandler(e) {
+    let value = e.target.value;
+    let name = e.target.name;
+    let storedVal = function() {
+      if (name == 'height' || name == 'width') {
+        return `${value}px`;
+      } else {
+        return value;
+      }
+    }
+    let id = e.target.id;
+    let toStore = {
+      store: {
+        requester: name,
+        requested: storedVal(),
+        [name]: value
+      }
+      
+    }
+    this.setState(toStore);
+    
+  }
+  
+  componentDidUpdate() {
+    
   }
   
   render() {
@@ -35,7 +66,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Page pageHandler={this.pageHandler}/>
+        <Page inputHandler={this.inputHandler} pageHandler={this.pageHandler} state={this.state}/>
+        
       </div>
     );
   }

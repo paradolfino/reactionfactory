@@ -37,6 +37,26 @@ p {
     }
 }
 
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    border-bottom: 2px solid #394b68;
+    div {
+        padding-bottom: 50px;
+        #form {
+            input {
+                margin-bottom: 10px;
+                height: 25px;
+                font-size: 16px;
+                border: 20px solid white;
+                border-radius: 30px;
+            }
+        }
+    }
+}
+
 @-moz-keyframes spin {
     from {
         -moz-transform: rotate(0deg);
