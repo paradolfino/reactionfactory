@@ -1,6 +1,6 @@
 /////////////////////////////////////////
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 /////////////////////////////////////////
 //pages//
 import Home from './components/pages/home';
@@ -13,9 +13,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     
+    this.pages = {
+      Home
+    };
+    
     this.state = {
-      page: Home
-    }
+      page: this.pages["Home"]
+    };
+    
+    
   }
   
   render() {
