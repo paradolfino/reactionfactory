@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+}
+
+header {
+    height: 200px;
+    color: white;
+    background: #394b68;
+    img {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+p {
+    color: #394b68;
+    letter-spacing: 3px;
+    &:hover {
+        color: black;
+    }
+}

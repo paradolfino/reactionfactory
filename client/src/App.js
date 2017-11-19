@@ -1,6 +1,6 @@
 /////////////////////////////////////////
 import React, { Component } from 'react';
-import './styles/App.css';
+import './styles/css/App.css';
 /////////////////////////////////////////
 //pages//
 import Home from './components/pages/home';
