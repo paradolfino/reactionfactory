@@ -7,7 +7,7 @@ const Factory = (props) => {
         <div id='page-factory' className="page">
             <div>
                 <Form onChange={props.inputHandler}/>
-                <DisplayButton state={props.state} />
+                <DisplayButton onClick={props.pageHandler} state={props.state} />
             </div>
       </div>
     );

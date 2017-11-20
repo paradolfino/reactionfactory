@@ -1,36 +1,46 @@
 import React, { Component } from 'react';
 
-let hoverColor;
 class DisplayButton extends Component {
     constructor(props) {
         super(props);
-        this.state;
+        this.stateRef = this.props.state;
         this.syncDef = this.syncDef.bind(this);
         this.syncHov = this.syncHov.bind(this);
+        this.syncFoc = this.syncFoc.bind(this);
         this.onMouseEnter = this.onMouseEnter.bind(this);
         this.onMouseLeave = this.onMouseLeave.bind(this);
+        
+        this.onClick = this.onClick.bind(this);
 
     }
     
     syncDef() {
         this.element = document.getElementById('display-button');
-        this.state = this.props.state;
-        let transition = this.state.defTransition;
+        this.stateRef = this.props.state;
+        let dur = this.stateRef.transitionDur;
         this.element.setAttribute('style',`
-            -webkit-transition: all 0.5s;
-            -moz-transition: all 0.5s;
-            -o-transition: all 0.5s;
-            transition: all 0.5s;
+            cursor: pointer;
+            border: none;
+            -webkit-transition: all ${dur};
+            -moz-transition: all ${dur};
+            -o-transition: all ${dur};
+            transition: all ${dur};
         `);
-        this.element.style.color = this.state.defColor;
-        this.element.style.backgroundColor = this.state.defBg;
-        this.element.style.height =  this.state.defHt;
-        this.element.style.width = this.state.defWt;
+        this.element.style.borderRadius = this.stateRef.borderRadius;
+        this.element.style.color = this.stateRef.defColor;
+        this.element.style.backgroundColor = this.stateRef.defBg;
+        this.element.style.height =  this.stateRef.defHt;
+        this.element.style.width = this.stateRef.defWt;
     }
     
     syncHov() {
-        this.element.style.color = this.state.hovColor;
-        this.element.style.backgroundColor = this.state.hovBg;
+        this.element.style.color = this.stateRef.hovColor;
+        this.element.style.backgroundColor = this.stateRef.hovBg;
+    }
+    
+    syncFoc() {
+        this.element.style.color = this.stateRef.focColor;
+        this.element.style.backgroundColor = this.stateRef.focBg;
     }
     
     onMouseEnter() {
@@ -41,6 +51,10 @@ class DisplayButton extends Component {
     onMouseLeave() {
         this.syncDef();
        
+    }
+    
+    onClick(e) {
+        this.props.onClick(e.target.value);
     }
     
     componentDidMount() {
@@ -54,7 +68,7 @@ class DisplayButton extends Component {
 
     render() {
         return (
-            <button id='display-button' onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave}>Test</button>
+            <button id='display-button' value='Output' onClick={this.onClick} onMouseEnter={this.syncHov} onMouseLeave={this.syncDef} onFocus={this.syncFoc} onBlur={this.syncDef}>Click me to generate your code!</button>
         );
     }
 }

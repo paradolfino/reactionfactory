@@ -5,6 +5,7 @@ import './styles/css/App.css';
 //pages//
 import Home from './components/pages/home';
 import Factory from './components/pages/factory';
+import Output from './components/pages/output';
 
 //elements//
 import Header from './components/elements/header';
@@ -15,25 +16,27 @@ class App extends Component {
     super(props);
     
     this.pages = {
-      Home: Home,
-      Factory: Factory
+      Home,
+      Factory,
+      Output
     };
     
     this.state = {
       page: "Home",
       defColor: 'black',
       defBg: 'white',
-      defHt: '30px',
-      defWt: '60px',
+      defHt: '50px',
+      defWt: '100px',
+      defFtSize: '16px',
       hovColor: 'black',
       hovBg: 'white',
       hovHt: '30px',
       hovWt: '60px',
+      focColor: 'black',
+      focBg: 'white',
+      borderRadius: '0',
       transitionDur: '0.5s'
     };
-    
-    this.defProps = {};
-    this.hoverProps = {};
     
     this.pageHandler = this.pageHandler.bind(this);
     this.inputHandler = this.inputHandler.bind(this);
@@ -46,10 +49,8 @@ class App extends Component {
   inputHandler(e) {
     let value = e.target.value;
     let name = e.target.name;
-    let defProps = this.defProps;
-    let hoverProps = this.hoverProps;
     let storedVal = function() {
-      if (name == 'defHt' || name == 'defWt') {
+      if (name.includes('Ht') || name.includes('Wt') || name.includes('FtSize')) {
         return `${value}px`;
       } else {
         return value;
@@ -58,14 +59,6 @@ class App extends Component {
     this.setState({
       [name]: storedVal()
     });
-    
-  }
-  
-  componentDidMount() {
-    
-  }
-  
-  componentDidUpdate() {
     
   }
   
