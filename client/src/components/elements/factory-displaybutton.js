@@ -4,34 +4,52 @@ let hoverColor;
 class DisplayButton extends Component {
     constructor(props) {
         super(props);
-        this.hoverColor;
-        this.hoverBg;
-        this.defColor;
-        this.defBg;
-        this.element;
-        this.store;
+        this.state;
+        this.syncDef = this.syncDef.bind(this);
+        this.syncHov = this.syncHov.bind(this);
         this.onMouseEnter = this.onMouseEnter.bind(this);
         this.onMouseLeave = this.onMouseLeave.bind(this);
+
+    }
+    
+    syncDef() {
+        this.element = document.getElementById('display-button');
+        this.state = this.props.state;
+        let transition = this.state.defTransition;
+        this.element.setAttribute('style',`
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+        `);
+        this.element.style.color = this.state.defColor;
+        this.element.style.backgroundColor = this.state.defBg;
+        this.element.style.height =  this.state.defHt;
+        this.element.style.width = this.state.defWt;
+    }
+    
+    syncHov() {
+        this.element.style.color = this.state.hovColor;
+        this.element.style.backgroundColor = this.state.hovBg;
     }
     
     onMouseEnter() {
-        this.element.style.color=this.hoverColor;
+        this.syncHov();
+       
     }
     
     onMouseLeave() {
-        this.store = this.props.state.store;
-        this.defColor = this.store.color;
-        this.defBg = this.store.backgroundColor;
-        this.element.style.color=this.defColor;
+        this.syncDef();
+       
+    }
+    
+    componentDidMount() {
+        this.syncDef();
     }
 
     componentDidUpdate() {
-        this.element = document.getElementById('display-button');
-        this.store = this.props.state.store;
+        this.syncDef();
         
-        this.hoverColor = this.store.hover.color;
-        this.element.style[this.store.requester] = this.store.requested;
-
     }
 
     render() {

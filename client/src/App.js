@@ -21,10 +21,19 @@ class App extends Component {
     
     this.state = {
       page: "Home",
-      store: {
-        
-      }
+      defColor: 'black',
+      defBg: 'white',
+      defHt: '30px',
+      defWt: '60px',
+      hovColor: 'black',
+      hovBg: 'white',
+      hovHt: '30px',
+      hovWt: '60px',
+      transitionDur: '0.5s'
     };
+    
+    this.defProps = {};
+    this.hoverProps = {};
     
     this.pageHandler = this.pageHandler.bind(this);
     this.inputHandler = this.inputHandler.bind(this);
@@ -37,36 +46,22 @@ class App extends Component {
   inputHandler(e) {
     let value = e.target.value;
     let name = e.target.name;
+    let defProps = this.defProps;
+    let hoverProps = this.hoverProps;
     let storedVal = function() {
-      if (name == 'height' || name == 'width') {
+      if (name == 'defHt' || name == 'defWt') {
         return `${value}px`;
       } else {
         return value;
       }
     }
-    let id = e.target.id;
-    let toStore = function(){
-      if (name === 'hover.color' || name === 'hover.backgroundColor'){
-        let split = name.split('.');
-        return {store: {
-          hover: {
-            [split[1]]: storedVal()
-          }
-        }};
-      } else {
-        return {store: {
-          requester: name,
-          requested: storedVal(),
-          [name]: value,
-          hover: {
-            color: '',
-            backgroundColor: ''
-          }
-        }};
-      }
-      console.log(this.state.store);
-    }
-    this.setState(toStore());
+    this.setState({
+      [name]: storedVal()
+    });
+    
+  }
+  
+  componentDidMount() {
     
   }
   
