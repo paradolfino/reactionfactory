@@ -1,8 +1,11 @@
 import React from 'react';
+
+import Button from '../elements/output-button';
+
 const Output = (props) => {
     let state = props.state;
     let strOutput = `
-        import React, { Component } from 'react';
+import React, { Component } from 'react';
 
 class Button extends Component {
   constructor(props) {
@@ -108,7 +111,8 @@ export default Button;
     return (
         <div id='page-output' className="page">
             <div>
-                <pre>{strOutput}</pre>
+                <div><pre>{strOutput}</pre></div>
+                <Button content={strOutput}/>
             </div>
       </div>
     );

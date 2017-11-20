@@ -9,6 +9,10 @@ const Home = (props) => {
                 <p>2. Quickly wire the button into your React app and give it some cool props: Like a name!</p>
                 <p>3. Download your button.js file or copy the generated source code directly!</p>
                 <Button value='Factory' text="Try it out!" onClick={props.pageHandler}/>
+                <br/>
+                <h1>Notes</h1>
+                <p>Currently, you must set appearance properties for on Focus if you change the other two states. Otherwise, the button will change to default appearance on clicking!</p> 
+                <p>Also, this app is not made for mobile devices. I have no idea why you'd want to use it on one either.</p>            
             </div>
       </div>
     );

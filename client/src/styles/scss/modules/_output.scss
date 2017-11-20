@@ -5,8 +5,18 @@
     border-bottom: 2px solid #394b68;
     overflow-y: scroll;
     div {
-        margin-top: 600px;
-        text-align: left !important;
+        div {
+            margin-top: 700px;
+            text-align: left !important;
+        }
+        #dl {
+            padding: 20px;
+            color: white;
+            background-color: #42aaf4;
+            border: none;
+            border-radius: 30px;
+        }
+        
 
     }
 }
