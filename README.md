@@ -12,3 +12,6 @@ Next planned component types:
 
 Next planned micro-changes:
 -More style options
+
+View live version of app:
+https://reactionfactory.herokuapp.com/
