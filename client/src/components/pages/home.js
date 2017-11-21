@@ -13,6 +13,8 @@ const Home = (props) => {
                 <h1>Notes</h1>
                 <p>Currently, you must set appearance properties for on Focus if you change the other two states. Otherwise, the button will change to default appearance on clicking!</p> 
                 <p>Also, this app is not made for mobile devices. I have no idea why you'd want to use it on one either.</p>            
+                <h3>Got bugs?</h3>
+                <p>Submit an issue to the <a href="https://github.com/viktharien/reactionfactory/issues">public repo!</a></p>
             </div>
       </div>
     );

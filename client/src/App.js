@@ -9,6 +9,7 @@ import Output from './components/pages/output';
 
 //elements//
 import Header from './components/elements/header';
+import Footer from './components/elements/footer';
 
 
 class App extends Component {
@@ -68,7 +69,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Page inputHandler={this.inputHandler} pageHandler={this.pageHandler} state={this.state}/>
-        
+        <Footer />
       </div>
     );
   }
