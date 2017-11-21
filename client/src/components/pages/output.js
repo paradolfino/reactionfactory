@@ -110,9 +110,10 @@ export default Button;
     `
     return (
         <div id='page-output' className="page">
-            <div>
-                <div><pre>{strOutput}</pre></div>
+            <div id='output-container'>
                 <DisplayButton id={'output-button'} onClick={props.pageHandler} value={'Download.dl'} content={strOutput} state={props.state} />
+                <div><pre>{strOutput}</pre></div>
+                
             </div>
       </div>
     );

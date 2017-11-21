@@ -22,17 +22,13 @@
   height: 900px;
   border-bottom: 2px solid #394b68;
   overflow-y: scroll; }
-  #page-output div div {
-    margin-top: 700px;
-    text-align: left !important; }
-  #page-output div #dl {
-    padding: 20px;
-    color: white;
-    background-color: #42aaf4;
-    border: none;
-    border-radius: 30px; }
+  #page-output #output-container {
+    margin-top: 800px; }
+    #page-output #output-container div {
+      text-align: left !important; }
 
 body {
+  min-width: 800px;
   text-align: center;
   background-color: #e6e6e6; }
 
