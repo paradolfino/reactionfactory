@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from '../elements/output-button';
+import DisplayButton from '../elements/displaybutton';
 
 const Output = (props) => {
     let state = props.state;
@@ -112,7 +112,7 @@ export default Button;
         <div id='page-output' className="page">
             <div>
                 <div><pre>{strOutput}</pre></div>
-                <Button content={strOutput}/>
+                <DisplayButton id={'output-button'} onClick={props.pageHandler} value={'Download.dl'} content={strOutput} state={props.state} />
             </div>
       </div>
     );

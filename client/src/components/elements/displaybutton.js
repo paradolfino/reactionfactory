@@ -9,16 +9,16 @@ class DisplayButton extends Component {
         this.syncFoc = this.syncFoc.bind(this);
         this.onMouseEnter = this.onMouseEnter.bind(this);
         this.onMouseLeave = this.onMouseLeave.bind(this);
-        
+
         this.onClick = this.onClick.bind(this);
 
     }
-    
+
     syncDef() {
-        this.element = document.getElementById('display-button');
+        this.element = document.getElementById(this.props.id);
         this.stateRef = this.props.state;
         let dur = this.stateRef.transitionDur;
-        this.element.setAttribute('style',`
+        this.element.setAttribute('style', `
             cursor: pointer;
             border: none;
             -webkit-transition: all ${dur};
@@ -29,46 +29,65 @@ class DisplayButton extends Component {
         this.element.style.borderRadius = this.stateRef.borderRadius;
         this.element.style.color = this.stateRef.defColor;
         this.element.style.backgroundColor = this.stateRef.defBg;
-        this.element.style.height =  this.stateRef.defHt;
+        this.element.style.height = this.stateRef.defHt;
         this.element.style.width = this.stateRef.defWt;
     }
-    
+
     syncHov() {
         this.element.style.color = this.stateRef.hovColor;
         this.element.style.backgroundColor = this.stateRef.hovBg;
     }
-    
+
     syncFoc() {
         this.element.style.color = this.stateRef.focColor;
         this.element.style.backgroundColor = this.stateRef.focBg;
     }
-    
+
     onMouseEnter() {
         this.syncHov();
-       
+
     }
-    
+
     onMouseLeave() {
         this.syncDef();
-       
+
     }
-    
+
     onClick(e) {
-        this.props.onClick(e.target.value);
+        let value = e.target.value.split('.');
+        let action = value[1];
+        switch (action) {
+            case 'click':
+                this.props.onClick(value[0]);
+                break;
+            case 'dl':
+                let element = document.createElement('a');
+                element.setAttribute('href', 'data:text/javascript;charset=utf-8,' + encodeURIComponent(this.props.content));
+                element.setAttribute('download', 'button.js');
+                element.style.display = 'none';
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+                break;
+            default:
+                break;
+        }
+
+
     }
-    
+
     componentDidMount() {
         this.syncDef();
     }
 
     componentDidUpdate() {
         this.syncDef();
-        
+
     }
 
     render() {
         return (
-            <button id='display-button' value='Output' onClick={this.onClick} onMouseEnter={this.syncHov} onMouseLeave={this.syncDef} onFocus={this.syncFoc} onBlur={this.syncDef}>Click me to generate your code!</button>
+            <button id={this.props.id} value={this.props.value} onClick={this.onClick} onMouseEnter={this.syncHov} onMouseLeave={this.syncDef} onFocus={this.syncFoc} onBlur={this.syncDef}>Click me to generate your code!</button>
         );
     }
 }
