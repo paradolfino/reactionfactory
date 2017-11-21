@@ -111,7 +111,10 @@ export default Button;
     return (
         <div id='page-output' className="page">
             <div id='output-container'>
-                <DisplayButton id={'output-button'} onClick={props.pageHandler} value={'Download.dl'} content={strOutput} state={props.state} />
+                <h3>Here's your button!</h3>
+                <DisplayButton id={'output-button'} onClick={props.pageHandler} value={'Download.dl'} content={strOutput} state={props.state} text={'Download me!'} />
+                <h3>Here's your button code!</h3>
+                <hr/>
                 <div><pre>{strOutput}</pre></div>
                 
             </div>

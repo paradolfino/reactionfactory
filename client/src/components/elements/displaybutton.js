@@ -87,7 +87,7 @@ class DisplayButton extends Component {
 
     render() {
         return (
-            <button id={this.props.id} value={this.props.value} onClick={this.onClick} onMouseEnter={this.syncHov} onMouseLeave={this.syncDef} onFocus={this.syncFoc} onBlur={this.syncDef}>Click me to generate your code!</button>
+            <button id={this.props.id} value={this.props.value} onClick={this.onClick} onMouseEnter={this.syncHov} onMouseLeave={this.syncDef} onFocus={this.syncFoc} onBlur={this.syncDef}>{this.props.text}</button>
         );
     }
 }
