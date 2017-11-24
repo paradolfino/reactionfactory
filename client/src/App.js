@@ -5,6 +5,7 @@ import './styles/css/App.css';
 //pages//
 import Home from './components/pages/home';
 import ButtonFactory from './components/pages/buttonfactory';
+import FormFactory from './components/pages/formfactory';
 import Output from './components/pages/output';
 
 //elements//
@@ -19,11 +20,13 @@ class App extends Component {
     this.pages = {
       Home,
       ButtonFactory,
+      FormFactory,
       Output
     };
-    
+    this.inputsArr = ['Input0'];
     this.state = {
       page: "Home",
+      inputs: this.inputsArr,
       defColor: 'black',
       defBg: 'white',
       defHt: '50px',
@@ -39,6 +42,9 @@ class App extends Component {
       transitionDur: '0.5s'
     };
     
+    
+    this.inputsLength = this.state.inputs.length;
+    
     this.pageHandler = this.pageHandler.bind(this);
     this.inputHandler = this.inputHandler.bind(this);
   }
@@ -50,6 +56,7 @@ class App extends Component {
   inputHandler(e) {
     let value = e.target.value;
     let name = e.target.name;
+    let obj = {};
     let storedVal = function() {
       if (name.includes('Ht') || name.includes('Wt') || name.includes('FtSize')) {
         return `${value}px`;
@@ -57,10 +64,25 @@ class App extends Component {
         return value;
       }
     }
-    this.setState({
-      [name]: storedVal()
-    });
+    if (name === 'addInput') {
+      this.inputsLength = this.state.inputs.length;
+      this.inputsArr.push('Input'+this.inputsLength);
+      obj = {inputs: this.inputsArr};
+      console.log(this.state.inputs);
+    } else {
+      obj = {[name]: storedVal()};
+    }
     
+    this.setState(obj);
+    
+  }
+  
+  componentDidMount() {
+    this.inputsLength = this.state.inputs.length;
+  }
+  
+  componentDidUpdate() {
+    this.inputsLength = this.state.inputs.length;
   }
   
   render() {

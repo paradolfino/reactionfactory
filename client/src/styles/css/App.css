@@ -4,10 +4,11 @@
   #page-factory div {
     position: relative;
     padding-bottom: 50px; }
-    #page-factory div #container {
+    #page-factory div #form-container {
       height: 100%;
-      width: 100%; }
-      #page-factory div #container form input {
+      width: 100%;
+      display: inline-block; }
+      #page-factory div #form-container form input {
         margin: 2px;
         height: 25px;
         font-size: 16px;

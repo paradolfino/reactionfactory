@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Form = (props) => {
+const FormForm = (props) => {
     return (
-        <div id='container'>
+        <div id='form-container'>
             <form action=''>
                 <p>Default Appearance</p>
                 <input name='defColor' onChange={props.onChange} placeholder='Text color!'/><br/>
@@ -27,4 +27,4 @@ const Form = (props) => {
         );
 }
 
-export default Form;
+export default FormForm;

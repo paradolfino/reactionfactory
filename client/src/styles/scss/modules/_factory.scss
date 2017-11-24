@@ -4,9 +4,10 @@
     div {
         position: relative;
         padding-bottom: 50px;
-        #container {
+        #form-container {
             height: 100%;
             width: 100%;
+            display: inline-block;
             form {
                 input {
                     margin: 2px;
