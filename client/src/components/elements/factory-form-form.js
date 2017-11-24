@@ -11,11 +11,6 @@ const FormForm = (props) => {
                 <input name='defWt' onChange={props.onChange} placeholder='Width!'/><br/>
             </form>
             <form action=''>
-                <p>on Hover</p>
-                <input name='hovColor' onChange={props.onChange} placeholder='Text color!'/><br/>
-                <input name='hovBg' onChange={props.onChange} placeholder='Background color!'/><br/>
-            </form>
-            <form action=''>
                 <p>on Focus</p>
                 <input name='focColor' onChange={props.onChange} placeholder='Text color!'/><br/>
                 <input name='focBg' onChange={props.onChange} placeholder='Background color!'/><br/>

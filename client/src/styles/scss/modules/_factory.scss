@@ -7,9 +7,12 @@
         #form-container {
             height: 100%;
             width: 100%;
-            display: inline-block;
+            
             form {
+                display: inline-block;
+                
                 input {
+                    
                     margin: 2px;
                     height: 25px;
                     font-size: 16px;

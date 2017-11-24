@@ -19,16 +19,20 @@ class DisplayForm extends Component {
 
     render() {
         return (
+            <div>
+            <h4>Add a field: <button name='addInput' value='add' onClick={this.onClick} >+</button><button name='delInput' value='del' onClick={this.onClick} >-</button></h4>
             <form action=''>
-                {this.inputs.map((input,key)=>{
+            
+                {this.inputs.map((key)=>{
                    return (
                     
-                    <p key={key}>{input}<button key={key} name='addInput' value='add' onClick={this.onClick} >+</button></p>
+                    <p key={key}><input type='text' id={'input'+key} placeholder="What kind of field is this?"/></p>
                     
                    );
                 })}
                 <DisplayButton id={'display-button'} onClick={this.props.onClick} value={'Output.click'} state={this.props.state} text={'Click me to generate your code!'} />
             </form>
+            </div>
         );
     }
 }

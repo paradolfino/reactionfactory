@@ -68,7 +68,10 @@ class App extends Component {
       this.inputsLength = this.state.inputs.length;
       this.inputsArr.push('Input'+this.inputsLength);
       obj = {inputs: this.inputsArr};
-      console.log(this.state.inputs);
+    } else if (name === 'delInput') {
+      this.inputsLength = this.state.inputs.length;
+      this.inputsLength > 1 && this.inputsArr.pop();
+      obj = {inputs: this.inputsArr};
     } else {
       obj = {[name]: storedVal()};
     }
@@ -77,13 +80,6 @@ class App extends Component {
     
   }
   
-  componentDidMount() {
-    this.inputsLength = this.state.inputs.length;
-  }
-  
-  componentDidUpdate() {
-    this.inputsLength = this.state.inputs.length;
-  }
   
   render() {
     let Page = this.pages[this.state.page];
