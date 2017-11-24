@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 class Button extends Component {
   constructor(props) {
     super(props);
-    this.id='ReactButton';
+    this.id=this.props.id;
     this.el = null;
     this.active = 0;
     this.style = {

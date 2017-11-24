@@ -8,8 +8,8 @@ const Home = (props) => {
                 <p>1. Easily create self-contained React button components with customized css.</p>
                 <p>2. Quickly wire the button into your React app and give it some cool props: Like a name!</p>
                 <p>3. Download your button.js file or copy the generated source code directly!</p>
-                <Button value='ButtonFactory' text="Build a Button" onClick={props.pageHandler}/>
-                <Button value='FormFactory' text="Build a Form" onClick={props.pageHandler}/>
+                <Button value='ButtonFactory' id='ButtonFactory' text="Build a Button" onClick={props.pageHandler}/>
+                <Button value='FormFactory' id='FormFactory' text="Build a Form" onClick={props.pageHandler}/>
                 <br/>
                 <h1>Notes</h1>
                 <p>Currently, you must set appearance properties for on Focus if you change the other two states. Otherwise, the button will change to default appearance on clicking!</p> 

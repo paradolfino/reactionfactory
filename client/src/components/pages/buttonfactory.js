@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../elements/factory-form';
+import Form from '../elements/factory-form-button';
 import DisplayButton from '../elements/displaybutton';
 
 const ButtonFactory = (props) => {
