@@ -2,7 +2,7 @@ import React from 'react';
 import Form from '../elements/factory-form';
 import DisplayButton from '../elements/displaybutton';
 
-const Factory = (props) => {
+const ButtonFactory = (props) => {
 
     return (
         <div id='page-factory' className="page">
@@ -15,4 +15,4 @@ const Factory = (props) => {
 
 }
 
-export default Factory;
+export default ButtonFactory;

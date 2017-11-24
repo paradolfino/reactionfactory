@@ -4,7 +4,7 @@ import './styles/css/App.css';
 /////////////////////////////////////////
 //pages//
 import Home from './components/pages/home';
-import Factory from './components/pages/factory';
+import ButtonFactory from './components/pages/buttonfactory';
 import Output from './components/pages/output';
 
 //elements//
@@ -18,7 +18,7 @@ class App extends Component {
     
     this.pages = {
       Home,
-      Factory,
+      ButtonFactory,
       Output
     };
     
