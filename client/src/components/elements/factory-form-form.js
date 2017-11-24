@@ -4,19 +4,24 @@ const FormForm = (props) => {
     return (
         <div id='form-container'>
             <form action=''>
-                <p>Default Appearance</p>
-                <input name='defColor' onChange={props.onChange} placeholder='Text color!'/><br/>
-                <input name='defBg' onChange={props.onChange} placeholder='Background color!'/><br/>
-                <input name='defHt' onChange={props.onChange} placeholder='Height!'/><br/>
-                <input name='defWt' onChange={props.onChange} placeholder='Width!'/><br/>
+                <p>Form Default Appearance</p>
+                <input name='formColor' onChange={props.onChange} placeholder='Text color!'/><br/>
+                <input name='formBg' onChange={props.onChange} placeholder='Background color!'/><br/>
+                <input name='formHt' onChange={props.onChange} placeholder='Height!'/><br/>
+                <input name='formWt' onChange={props.onChange} placeholder='Width!'/><br/>
+                <p>Border Shape</p>
+                <input type="radio" name="inputBorderRadius" value="30px" onChange={props.onChange}/>Rounded
+                <input type="radio" name="inputBorderRadius" value="15px 30px" onChange={props.onChange}/>Two Corners
+                <input name='inputHt' onChange={props.onChange} placeholder='Height!'/><br/>
+                <input name='inputWt' onChange={props.onChange} placeholder='Width!'/><br/>
             </form>
             <form action=''>
-                <p>on Focus</p>
-                <input name='focColor' onChange={props.onChange} placeholder='Text color!'/><br/>
-                <input name='focBg' onChange={props.onChange} placeholder='Background color!'/><br/>
+                <p>Input Default Appearance</p>
+                <input name='inputColor' onChange={props.onChange} placeholder='Text color!'/><br/>
+                <input name='inputBg' onChange={props.onChange} placeholder='Background color!'/><br/>
                 <p>Border Shape</p>
-                <input type="radio" name="borderRadius" value="30px" onChange={props.onChange}/>Rounded
-                <input type="radio" name="borderRadius" value="15px 30px" onChange={props.onChange}/>Two Corners
+                <input type="radio" name="inputBorderRadius" value="30px" onChange={props.onChange}/>Rounded
+                <input type="radio" name="inputBorderRadius" value="15px 30px" onChange={props.onChange}/>Two Corners
             </form>
         </div>
         );

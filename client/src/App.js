@@ -39,7 +39,22 @@ class App extends Component {
       focColor: 'black',
       focBg: 'white',
       borderRadius: '0',
-      transitionDur: '0.5s'
+      transitionDur: '0.5s',
+      formColor: 'black',
+      formBg: 'gray',
+      formHt: '500px',
+      formWt: '500px',
+      formBorderRadius: 0,
+      inputColor: 'black',
+      inputBg: 'white',
+      inputHt: '30px',
+      inputWt: '150px',
+      inputFocColor: 'black',
+      inputFocBg: 'white',
+      inputFocHt: '30px',
+      inputFocWt: '150px',
+      inputBorderRadius: 0
+      
     };
     
     
