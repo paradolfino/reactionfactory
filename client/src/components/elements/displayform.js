@@ -67,7 +67,7 @@ class DisplayForm extends Component {
                 {this.stateRef.inputs.map((key)=>{
                    return (
                     
-                    <DisplayInput key={key} id='display-input' state={this.props.state} saveStyle={this.props.saveStyle}/>
+                    <DisplayInput key={key} id={'display-input'+key} state={this.props.state} saveStyle={this.props.saveStyle}/>
                     
                    );
                 })}

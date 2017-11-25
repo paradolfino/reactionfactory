@@ -23,7 +23,7 @@ class App extends Component {
       FormFactory,
       Output
     };
-    this.inputsArr = ['Input0'];
+    this.inputsArr = [0];
     this.state = {
       page: "Home",
       inputs: this.inputsArr,
@@ -82,7 +82,7 @@ class App extends Component {
     }
     if (name === 'addInput') {
       this.inputsLength = this.state.inputs.length;
-      this.inputsArr.push('Input'+this.inputsLength);
+      this.inputsArr.push(this.inputsLength);
       obj = {inputs: this.inputsArr};
     } else if (name === 'delInput') {
       this.inputsLength = this.state.inputs.length;
@@ -91,7 +91,6 @@ class App extends Component {
     } else {
       obj = {[name]: storedVal()};
     }
-    
     this.setState(obj);
     
   }

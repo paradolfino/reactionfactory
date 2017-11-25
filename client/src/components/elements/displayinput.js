@@ -10,6 +10,13 @@ class DisplayInput extends Component {
     }
 
     syncDef() {
+        this.style = {
+            color: this.stateRef.inputColor,
+            backgroundColor: this.stateRef.inputBg,
+            height: this.stateRef.inputHt,
+            width: this.stateRef.inputWt,
+            borderRadius: this.stateRef.inputBorderRadius
+        }
         this.element = document.getElementById(this.props.id);
         this.stateRef = this.props.state;
         let dur = this.stateRef.transitionDur;
@@ -24,13 +31,6 @@ class DisplayInput extends Component {
         this.element.style.backgroundColor = this.stateRef.inputBg;
         this.element.style.height = this.stateRef.inputHt;
         this.element.style.width = this.stateRef.inputWt;
-        this.style = {
-            color: this.stateRef.inputColor,
-            backgroundColor: this.stateRef.inputBg,
-            height: this.stateRef.inputHt,
-            width: this.stateRef.inputWt,
-            borderRadius: this.stateRef.inputBorderRadius
-        }
         
         
     }
