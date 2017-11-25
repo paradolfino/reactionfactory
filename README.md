@@ -7,7 +7,7 @@ The components will possess generated logic and will only need to be wired into 
 Current component types supported:
 -Buttons
 
-Next planned component types:
+Currently working on:
 -Forms
 
 Next planned micro-changes:
@@ -15,3 +15,6 @@ Next planned micro-changes:
 
 View live version of app:
 https://reactionfactory.herokuapp.com/
+
+View the unstable development version:
+https://reactionfactory-viktharien.c9users.io

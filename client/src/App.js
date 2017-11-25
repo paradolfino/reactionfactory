@@ -45,6 +45,7 @@ class App extends Component {
       formHt: '500px',
       formWt: '500px',
       formBorderRadius: 0,
+      formPadding: '0px',
       inputColor: 'black',
       inputBg: 'white',
       inputHt: '30px',
@@ -72,6 +73,7 @@ class App extends Component {
   inputHandler(e) {
     let value = e.target.value;
     let name = e.target.name;
+    let pad = parseInt(this.state.formPadding);
     let obj = {};
     let storedVal = function() {
       if (name.includes('Ht') || name.includes('Wt') || name.includes('FtSize')) {
@@ -80,17 +82,30 @@ class App extends Component {
         return value;
       }
     }
-    if (name === 'addInput') {
-      this.inputsLength = this.state.inputs.length;
-      this.inputsArr.push(this.inputsLength);
-      obj = {inputs: this.inputsArr};
-    } else if (name === 'delInput') {
-      this.inputsLength = this.state.inputs.length;
-      this.inputsLength > 1 && this.inputsArr.pop();
-      obj = {inputs: this.inputsArr};
-    } else {
-      obj = {[name]: storedVal()};
+    switch(name){
+      case 'addInput':
+        this.inputsLength = this.state.inputs.length;
+        this.inputsArr.push(this.inputsLength);
+        obj = {inputs: this.inputsArr};
+        break;
+      case 'delInput':
+        this.inputsLength = this.state.inputs.length;
+        this.inputsLength > 1 && this.inputsArr.pop();
+        obj = {inputs: this.inputsArr};
+        break;
+      case 'incPad':
+        pad+=10;
+        obj = {formPadding: pad+'px'};
+        break;
+      case 'decPad':
+        pad-=10;
+        obj = {formPadding: pad+'px'};
+        break;
+      default:
+        obj = {[name]: storedVal()};
+        break;
     }
+    console.log(obj);
     this.setState(obj);
     
   }
