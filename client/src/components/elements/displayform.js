@@ -1,64 +1,47 @@
 import React, { Component } from 'react';
 
 import DisplayButton from './displaybutton';
+import DisplayInput from './displayinput';
 
 class DisplayForm extends Component {
     constructor(props) {
         super(props);
         this.el;
-        this.element;
+        this.element = this.props.id;
         this.stateRef = this.props.state;
-        this.inputs = this.stateRef.inputs;
         this.syncDef = this.syncDef.bind(this);
         this.syncFoc = this.syncFoc.bind(this);
-        this.parts = ['display-form', 'display-input', 'display-button'];
-
         this.onClick = this.onClick.bind(this);
-
+        console.log(this.element);
     }
 
     syncDef() {
+        this.element = document.getElementById(this.props.id);
         this.stateRef = this.props.state;
         let dur = this.stateRef.transitionDur;
-        this.parts.forEach((item) => {
-            this.element = document.getElementById(item);
-            this.el = item.split('-');
-            this.element.setAttribute('style', `
-            cursor: pointer;
+        this.element.setAttribute('style', `
             border: none;
             -webkit-transition: all ${dur};
             -moz-transition: all ${dur};
             -o-transition: all ${dur};
             transition: all ${dur};
         `);
-            this.element.style.borderRadius = this.stateRef[this.el[1] + 'BorderRadius'];
-            this.element.style.color = this.stateRef[this.el[1] + 'Color'];
-            this.element.style.backgroundColor = this.stateRef[this.el[1] + 'Bg'];
-            this.element.style.height = this.stateRef[this.el[1] + 'Ht'];
-            this.element.style.width = this.stateRef[this.el[1] + 'Wt'];
-        });
-
+        this.element.style.borderRadius = this.stateRef.formBorderRadius;
+        this.element.style.color = this.stateRef.formColor;
+        this.element.style.backgroundColor = this.stateRef.formBg;
+        this.element.style.height = this.stateRef.formHt;
+        this.element.style.width = this.stateRef.formWt;
     }
+
+  
 
     syncFoc() {
-        this.parts.forEach((item)=>{
-            this.element = document.getElementById(item);
-            this.el = item.split('-');
-            this.element.style.color = this.stateRef[this.el[1] + 'FocColor'];
-            this.element.style.backgroundColor = this.stateRef[this.el[1] + 'FocBg'];
-        });
-        
+        this.element.style.color = this.stateRef.formFocColor;
+        this.element.style.backgroundColor = this.stateRef.formFocBg;
     }
 
+    
 
-
-
-
-
-    onClick(e) {
-        e.preventDefault();
-        this.props.onAdd(e);
-    }
 
     componentDidMount() {
         this.syncDef();
@@ -66,17 +49,25 @@ class DisplayForm extends Component {
 
     componentDidUpdate() {
         this.syncDef();
+
     }
+
+    onClick(e) {
+        e.preventDefault();
+        this.props.onAdd(e);
+        this.syncDef();
+    }
+
     render() {
         return (
             <div>
             <h4>Add a field: <button name='addInput' value='add' onClick={this.onClick} >+</button><button name='delInput' value='del' onClick={this.onClick} >-</button></h4>
-            <form id='display-form' action=''>
+            <form id={this.props.id} action=''>
             
-                {this.inputs.map((key)=>{
+                {this.stateRef.inputs.map((key)=>{
                    return (
                     
-                    <p key={key}><input type='text' id='display-input' placeholder="What kind of field is this?"/></p>
+                    <DisplayInput key={key} id='display-input' state={this.props.state} saveStyle={this.props.saveStyle}/>
                     
                    );
                 })}

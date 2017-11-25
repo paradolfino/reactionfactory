@@ -11,7 +11,7 @@ const FormForm = (props) => {
                 <input name='formWt' onChange={props.onChange} placeholder='Width!'/><br/>
                 <p>Border Shape</p>
                 <input type="radio" name="inputBorderRadius" value="30px" onChange={props.onChange}/>Rounded
-                <input type="radio" name="inputBorderRadius" value="15px 30px" onChange={props.onChange}/>Two Corners
+                <input type="radio" name="inputBorderRadius" value="15px 30px" onChange={props.onChange}/>Two Corners<br/>
                 <input name='inputHt' onChange={props.onChange} placeholder='Height!'/><br/>
                 <input name='inputWt' onChange={props.onChange} placeholder='Width!'/><br/>
             </form>

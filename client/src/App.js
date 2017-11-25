@@ -53,7 +53,8 @@ class App extends Component {
       inputFocBg: 'white',
       inputFocHt: '30px',
       inputFocWt: '150px',
-      inputBorderRadius: 0
+      inputBorderRadius: 0,
+      inputStyle: ''
       
     };
     
@@ -96,12 +97,13 @@ class App extends Component {
   }
   
   
+  
   render() {
     let Page = this.pages[this.state.page];
     return (
       <div className="App">
         <Header />
-        <Page inputHandler={this.inputHandler} pageHandler={this.pageHandler} state={this.state}/>
+        <Page inputHandler={this.inputHandler} pageHandler={this.pageHandler} state={this.state} />
         <Footer />
       </div>
     );
