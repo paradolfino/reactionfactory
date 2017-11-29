@@ -14,7 +14,7 @@ class Output extends Component {
       this.inputString += `\n<Input id={'input'+${key}} onChange={this.onChange}/>`;
     });
     this.strOutput;
-    props.outputType === 'temp_form' ? temp_form(this.state,this.inputString) : temp_button(this.state,this.inputString);
+    props.outputType === 'temp_form' ? this.strOutput = temp_form(this.state,this.inputString) : this.strOutput = temp_button(this.state,this.inputString);
   }
   render() {
     return (
