@@ -12,7 +12,7 @@ const ButtonFactory = (props) => {
                 <FormForm onChange={props.inputHandler}/>
                 <h3>Button Appearance</h3>
                 <BtnForm onChange={props.inputHandler}/>
-                <DisplayForm id='display-form' state={props.state} onClick={props.pageHandler} onAdd={props.inputHandler} saveStyle={props.saveStyle} />
+                <DisplayForm id='display-form' state={props.state} onClick={props.pageHandler} onAdd={props.inputHandler} outputType='temp_form' />
             </div>
       </div>
     );

@@ -1,4 +1,4 @@
-const temp_form = (state) => {
+const temp_form = (state, inputString) => {
     return (`
     import React, { Component } from 'react';
 
@@ -78,7 +78,7 @@ const temp_form = (state) => {
       }
       render() {
         return (
-          ${this.inputString}
+          ${inputString}
           <TextArea />
           <Button />
         );
@@ -90,7 +90,7 @@ const temp_form = (state) => {
         `);
 }
 
-const temp_button = (state) => {
+const temp_button = (state, inputString) => {
     return (`
     import React, { Component } from 'react';
     
