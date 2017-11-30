@@ -1,20 +1,56 @@
 import React, { Component } from "react";
-import { temp_form, temp_button } from '../templates/templates';
+import { temp_form, temp_button } from "../templates/templates";
 
 import DisplayButton from "../elements/displaybutton";
 
+let renderType = {
+  button: (
+    <DisplayButton
+      id={"output-button"}
+      onClick={this.props.pageHandler}
+      value={"Download.dl"}
+      content={this.strOutput}
+      state={this.props.state}
+      text={"Download me!"}
+    />
+  ),
+  form: (
+    <div>
+      <DisplayButton
+        id={"output-button"}
+        onClick={this.props.pageHandler}
+        value={"Download.dl"}
+        content={temp_form(this.state, this.inputString)}
+        state={this.props.state}
+        text={"Download form.js"}
+      />
+      <DisplayButton
+        id={"output-button"}
+        onClick={this.props.pageHandler}
+        value={"Download.dl"}
+        content={temp_button(this.state, this.inputString)}
+        state={this.props.state}
+        text={"Download button.js"}
+      />
+    </div>
+  )
+};
 
 class Output extends Component {
   constructor(props) {
     super(props);
 
     this.state = this.props.state;
-    this.inputString = '';
-    this.inputs = this.state.inputs.map((key)=>{
-      this.inputString += `\n<Input id={'input'+${key}} onChange={this.onChange}/>`;
+    this.inputString = "";
+    this.inputs = this.state.inputs.map(key => {
+      this.inputString += `\n<Input id={'input'+${
+        key
+      }} onChange={this.onChange}/>`;
     });
     this.strOutput;
-    props.outputType === 'temp_form' ? this.strOutput = temp_form(this.state,this.inputString) : this.strOutput = temp_button(this.state,this.inputString);
+    props.outputType === "temp_form"
+      ? (this.strOutput = temp_form(this.state, this.inputString))
+      : (this.strOutput = temp_button(this.state, this.inputString));
   }
   render() {
     return (
