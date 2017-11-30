@@ -56,16 +56,9 @@ class Output extends Component {
     return (
       <div id="page-output" className="page">
         <div id="output-container">
-          <h3>Here's your button!</h3>
-          <DisplayButton
-            id={"output-button"}
-            onClick={this.props.pageHandler}
-            value={"Download.dl"}
-            content={this.strOutput}
-            state={this.props.state}
-            text={"Download me!"}
-          />
-          <h3>Here's your button code!</h3>
+          <h3>{this.props.outputHeaderTop}</h3>
+          {renderType.form}
+          <h3>{this.props.outputHeaderBot}</h3>
           <hr />
           <div>
             <pre>{this.strOutput}</pre>
