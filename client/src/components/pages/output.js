@@ -14,43 +14,21 @@ class Output extends Component {
         key
       }} onChange={this.onChange}/>`;
     });
-    this.strOutput;
     props.outputType === "temp_form"
       ? (this.strOutput = temp_form(this.state, this.inputString))
       : (this.strOutput = temp_button(this.state, this.inputString));
 
-    this.renderType = {
-      button: (
-        <DisplayButton
+      /*
+      <DisplayButton
           id={"output-button"}
           onClick={this.props.pageHandler}
           value={"Download.dl"}
           content={this.strOutput}
           state={this.props.state}
-          text={"Download me!"}
-        />
-      ),
-      form: (
-        <div>
-          <DisplayButton
-            id={"output-button"}
-            onClick={this.props.pageHandler}
-            value={"Download.dl"}
-            content={temp_form(this.state, this.inputString)}
-            state={this.props.state}
-            text={"Download form.js"}
-          />
-          <DisplayButton
-            id={"output-button"}
-            onClick={this.props.pageHandler}
-            value={"Download.dl"}
-            content={temp_button(this.state, this.inputString)}
-            state={this.props.state}
-            text={"Download button.js"}
-          />
-        </div>
-      )
-    };
+          text={this.props.text[0]}
+      />
+      */
+
   }
   render() {
     return (
