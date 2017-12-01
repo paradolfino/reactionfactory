@@ -13,6 +13,12 @@ import Header from './components/elements/header';
 import Footer from './components/elements/footer';
 
 
+/*work on this: - this is a mess. need to route the outputType from DisplayButton in one of the two factory pages to state.
+ May have to add a handler to the DisplayButton itself.
+
+ Also fix App so that only one function mutates state. Add an executor function to handle all state change cases.
+ */
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -59,6 +65,7 @@ class App extends Component {
       
 
       //button stuff - for now
+      outputType: '',
       temp_button: ['Button.js'],
       temp_form: ['Form.js','Button.js','Input.js']
     };
@@ -121,7 +128,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Page inputHandler={this.inputHandler} pageHandler={this.pageHandler} state={this.state} />
+        <Page inputHandler={this.inputHandler} pageHandler={this.pageHandler} state={this.state} outputType={this.state.outputType} />
         <Footer />
       </div>
     );
