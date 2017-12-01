@@ -76,7 +76,7 @@ class DisplayForm extends Component {
                    );
                 })}
                 <DisplayText id='display-textarea' state={this.props.state}/><br/>
-                <DisplayButton id='display-button' onClick={this.props.onClick} value={'Output.click'} state={this.props.state} text={'Click me to generate your code!'} outputType={this.props.outputType} />
+                <DisplayButton id='display-button' onClick={this.props.onClick} value={'Output.click'} state={this.props.state} text={'Click me to generate your code!'} outputType={this.props.outputType} buttons={['Form.js','Button.js','Input.js']} />
             </form>
             </div>
         );
