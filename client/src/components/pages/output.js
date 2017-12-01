@@ -35,7 +35,7 @@ class Output extends Component {
         <div id="output-container">
           <h3>{this.props.outputHeaderTop}</h3>
           {this.props.buttons.map(button => {
-            <DisplayButton
+            return <DisplayButton
               id={"output-button"}
               onClick={this.props.pageHandler}
               value={`Download-${button}`}
