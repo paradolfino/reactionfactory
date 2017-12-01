@@ -14,7 +14,7 @@ class Output extends Component {
         key
       }} onChange={this.onChange}/>`;
     });
-    props.outputType === "temp_form"
+    this.props.outputType === "temp_form"
       ? (this.strOutput = temp_form(this.state, this.inputString))
       : (this.strOutput = temp_button(this.state, this.inputString));
 
@@ -34,11 +34,11 @@ class Output extends Component {
       <div id="page-output" className="page">
         <div id="output-container">
           <h3>{this.props.outputHeaderTop}</h3>
-          {this.props.buttons.map(button => {
+          {this.state[this.props.outputType].map(button => {
             return <DisplayButton
               id={"output-button"}
               onClick={this.props.pageHandler}
-              value={`Download-${button}`}
+              value={`Download-${button}.dl`}
               content={this.strOutput}
               state={this.props.state}
               text={button}

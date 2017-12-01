@@ -55,8 +55,12 @@ class App extends Component {
       inputFocHt: '30px',
       inputFocWt: '150px',
       inputBorderRadius: 0,
-      inputStyle: ''
+      inputStyle: '',
       
+
+      //button stuff - for now
+      temp_button: ['Button.js'],
+      temp_form: ['Form.js','Button.js','Input.js']
     };
     
     
