@@ -79,13 +79,22 @@ class App extends Component {
     this.executor = this.executor.bind(this);
   }
 
-  executor(e) {
-
+  executor(value,action,outputType) {
+    let obj;
+    switch(action) {
+      case 'page':
+        obj = {page: value, outputType: outputType};
+        break;
+      case 'input':
+        obj = value;
+        break;
+    }
+    this.setState(obj);
   }
   
-  pageHandler(val) {
-    console.log(val);
-    this.setState({page: val});
+  pageHandler(value) {
+    this.executor(value,'page');
+    
   }
   
   inputHandler(e) {
@@ -124,7 +133,7 @@ class App extends Component {
         obj = {[name]: storedVal()};
         break;
     }
-    this.setState(obj);
+    this.executor(obj, 'input');
     
   }
   
