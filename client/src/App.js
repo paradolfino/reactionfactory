@@ -75,23 +75,30 @@ class App extends Component {
     
     this.pageHandler = this.pageHandler.bind(this);
     this.inputHandler = this.inputHandler.bind(this);
+    this.outputHandler = this.outputHandler.bind(this);
 
     this.executor = this.executor.bind(this);
   }
 
-  executor(value,action,parameter) {
+  executor(value,action) {
     let obj;
     
     switch(action) {
       case 'page':
-        obj = {page: value, outputType: parameter};
+        obj = {page: value};
         break;
       case 'input':
         obj = value;
         break;
+      case 'output':
+        obj = {outputType: value};
+        break;
     }
     this.setState(obj);
-    console.log(obj, parameter);
+  }
+
+  outputHandler(value) {
+    this.executor(value,'output');
   }
   
   pageHandler(value) {
@@ -138,14 +145,16 @@ class App extends Component {
     
   }
   
-  
+  componentDidUpdate() {
+    console.log(this.state.outputType);
+  }
   
   render() {
     let Page = this.pages[this.state.page];
     return (
       <div className="App">
         <Header />
-        <Page inputHandler={this.inputHandler} pageHandler={this.pageHandler} state={this.state} outputType={this.state.outputType} />
+        <Page inputHandler={this.inputHandler} pageHandler={this.pageHandler} outputHandler={this.outputHandler} state={this.state} />
         <Footer />
       </div>
     );

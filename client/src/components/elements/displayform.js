@@ -47,6 +47,7 @@ class DisplayForm extends Component {
 
     componentDidMount() {
         this.syncDef();
+        console.log(this.props.outputType);
     }
 
     componentDidUpdate() {
