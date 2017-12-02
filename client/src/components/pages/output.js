@@ -14,16 +14,18 @@ class Output extends Component {
       }} onChange={this.onChange}/>`;
     });
 
-
+    this.props.state.outputType === 'temp_button'
+    ? this.strOutput = temp_button(this.props.state,this.inputString) : this.strOutput = temp_form(this.props.state,this.inputString);
   }
   render() {
     return (
       <div id="page-output" className="page">
         <div id="output-container">
           <h3>{this.props.outputHeaderTop}</h3>
-          {this.props.state[this.props.outputType].map(button => {
+          {this.props.state[this.props.state.outputType].map(button => {
             return <DisplayButton
-              id={"output-button"}
+              key={button}
+              id={`output-button${button}`}
               onClick={this.props.pageHandler}
               value={`Download-${button}.dl`}
               content={this.strOutput}
