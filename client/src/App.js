@@ -81,6 +81,7 @@ class App extends Component {
 
   executor(value,action,outputType) {
     let obj;
+    
     switch(action) {
       case 'page':
         obj = {page: value, outputType: outputType};
@@ -90,6 +91,7 @@ class App extends Component {
         break;
     }
     this.setState(obj);
+    console.log(obj, this.state.outputType);
   }
   
   pageHandler(value) {
@@ -100,7 +102,6 @@ class App extends Component {
   inputHandler(e) {
     let value = e.target.value;
     let name = e.target.name;
-    console.log(name);
     let pad = parseInt(this.state.formPadding);
     let obj = {};
     let storedVal = function() {
