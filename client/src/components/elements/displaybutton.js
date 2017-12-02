@@ -60,6 +60,7 @@ class DisplayButton extends Component {
         switch (action) {
             case 'click':
                 this.props.onClick(value[0],value[1],outputType); //
+                console.log(outputType);
                 break;
             case 'dl':
                 let element = document.createElement('a');

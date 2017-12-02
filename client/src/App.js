@@ -79,19 +79,19 @@ class App extends Component {
     this.executor = this.executor.bind(this);
   }
 
-  executor(value,action,outputType) {
+  executor(value,action,parameter) {
     let obj;
     
     switch(action) {
       case 'page':
-        obj = {page: value, outputType: outputType};
+        obj = {page: value, outputType: parameter};
         break;
       case 'input':
         obj = value;
         break;
     }
     this.setState(obj);
-    console.log(obj, this.state.outputType);
+    console.log(obj, parameter);
   }
   
   pageHandler(value) {

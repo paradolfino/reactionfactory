@@ -3,6 +3,8 @@ import BtnForm from '../elements/factory-form-button';
 import FormForm from '../elements/factory-form-form';
 import DisplayForm from '../elements/displayform';
 
+let outputType = 'temp_form';
+
 const ButtonFactory = (props) => {
 
     return (
@@ -12,7 +14,7 @@ const ButtonFactory = (props) => {
                 <FormForm onChange={props.inputHandler}/>
                 <h3>Button Appearance</h3>
                 <BtnForm onChange={props.inputHandler}/>
-                <DisplayForm id='display-form' state={props.state} onClick={props.pageHandler} onAdd={props.inputHandler} outputType='temp_form' />
+                <DisplayForm id='display-form' state={props.state} onClick={props.pageHandler} onAdd={props.inputHandler} outputType={outputType} />
             </div>
       </div>
     );
