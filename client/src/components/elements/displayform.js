@@ -20,7 +20,6 @@ class DisplayForm extends Component {
         this.stateRef = this.props.state;
         let dur = this.stateRef.transitionDur;
         let pad = this.stateRef.formPadding;
-        console.log(pad);
         this.element.setAttribute('style', `
             border: none;
             -webkit-transition: all ${dur};

@@ -75,15 +75,23 @@ class App extends Component {
     
     this.pageHandler = this.pageHandler.bind(this);
     this.inputHandler = this.inputHandler.bind(this);
+
+    this.executor = this.executor.bind(this);
+  }
+
+  executor(e) {
+
   }
   
   pageHandler(val) {
+    console.log(val);
     this.setState({page: val});
   }
   
   inputHandler(e) {
     let value = e.target.value;
     let name = e.target.name;
+    console.log(name);
     let pad = parseInt(this.state.formPadding);
     let obj = {};
     let storedVal = function() {
@@ -116,7 +124,6 @@ class App extends Component {
         obj = {[name]: storedVal()};
         break;
     }
-    console.log(obj);
     this.setState(obj);
     
   }

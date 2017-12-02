@@ -34,7 +34,7 @@ class Output extends Component {
       <div id="page-output" className="page">
         <div id="output-container">
           <h3>{this.props.outputHeaderTop}</h3>
-          {this.state[this.props.outputType].map(button => {
+          {/*this.state[this.props.outputType].map(button => {
             return <DisplayButton
               id={"output-button"}
               onClick={this.props.pageHandler}
@@ -43,7 +43,7 @@ class Output extends Component {
               state={this.props.state}
               text={button}
             />;
-          })}
+          })*/ 's'}
           <h3>{this.props.outputHeaderBot}</h3>
           <hr />
           <div>

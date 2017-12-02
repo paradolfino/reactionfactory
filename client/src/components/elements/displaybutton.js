@@ -55,10 +55,11 @@ class DisplayButton extends Component {
 
     onClick(e) {
         let value = e.target.value.split('.');
+        let outputType = this.props.outputType;
         let action = value[1];
         switch (action) {
             case 'click':
-                this.props.onClick(value[0]);
+                this.props.onClick(value[0],value[1],outputType); //
                 break;
             case 'dl':
                 let element = document.createElement('a');
