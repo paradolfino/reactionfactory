@@ -16,6 +16,11 @@ class Output extends Component {
 
     this.props.state.outputType === 'temp_button'
     ? this.strOutput = temp_button(this.props.state,this.inputString) : this.strOutput = temp_form(this.props.state,this.inputString);
+
+    this.content = {
+      temp_button: temp_button(this.props.state,this.inputString),
+      temp_form: temp_form(this.props.state,this.inputString)
+    }
   }
   render() {
     return (
@@ -24,13 +29,13 @@ class Output extends Component {
           <h3>{this.props.outputHeaderTop}</h3>
           {this.props.state[this.props.state.outputType].map(button => {
             return <DisplayButton
-              key={button}
-              id={`output-button${button}`}
+              key={button[0]}
+              id={`output-button${button[0]}`}
               onClick={this.props.pageHandler}
-              value={`${button}.dl`}
-              content={this.strOutput}
+              value={`${button[0]}.dl`}
+              content={this.content[button[1]]}
               state={this.props.state}
-              text={button}
+              text={button[0]}
             />;
           })}
           <h3>{this.props.outputHeaderBot}</h3>

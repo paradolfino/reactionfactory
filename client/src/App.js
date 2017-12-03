@@ -13,7 +13,7 @@ import Header from './components/elements/header';
 import Footer from './components/elements/footer';
 
 
-/*work on this: output buttons need to generate download files based on what they are
+/*work on this: need to create a template for input and wire it up - after which everything will be finished and ready for touch up on css
  */
 
 class App extends Component {
@@ -64,7 +64,7 @@ class App extends Component {
       //button stuff - for now
       outputType: '',
       temp_button: ['Button'],
-      temp_form: ['Form','Button','Input']
+      temp_form: [['Form','temp_form'],['Button','temp_button'],['Input','temp_form']]
     };
     
     
