@@ -63,13 +63,14 @@ class DisplayButton extends Component {
             case 'dl':
                 let element = document.createElement('a');
                 element.setAttribute('href', 'data:text/javascript;charset=utf-8,' + encodeURIComponent(this.props.content));
-                element.setAttribute('download', 'button.js');
+                element.setAttribute('download', this.props.text + ".js");
                 element.style.display = 'none';
                 document.body.appendChild(element);
                 element.click();
                 document.body.removeChild(element);
                 break;
             default:
+                console.log("Default");
                 break;
         }
 

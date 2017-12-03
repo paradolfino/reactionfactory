@@ -63,8 +63,8 @@ class App extends Component {
 
       //button stuff - for now
       outputType: '',
-      temp_button: ['Button.js'],
-      temp_form: ['Form.js','Button.js','Input.js']
+      temp_button: ['Button'],
+      temp_form: ['Form','Button','Input']
     };
     
     

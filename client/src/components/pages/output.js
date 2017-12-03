@@ -27,7 +27,7 @@ class Output extends Component {
               key={button}
               id={`output-button${button}`}
               onClick={this.props.pageHandler}
-              value={`Download-${button}.dl`}
+              value={`${button}.dl`}
               content={this.strOutput}
               state={this.props.state}
               text={button}
