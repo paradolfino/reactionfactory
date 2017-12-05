@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { temp_form, temp_button } from "../templates/templates";
+import { temp_form, temp_button, temp_input } from "../templates/templates";
 
 import DisplayButton from "../elements/displaybutton";
 
@@ -19,8 +19,9 @@ class Output extends Component {
 
     this.content = {
       temp_button: temp_button(this.props.state,this.inputString),
-      temp_form: temp_form(this.props.state,this.inputString)
-    }
+      temp_form: temp_form(this.props.state,this.inputString),
+      temp_input: temp_input(this.props.state,this.inputString)
+    };
   }
   render() {
     return (

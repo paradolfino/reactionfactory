@@ -64,7 +64,7 @@ class App extends Component {
       //button stuff - for now
       outputType: '',
       temp_button: ['Button'],
-      temp_form: [['Form','temp_form'],['Button','temp_button'],['Input','temp_form']]
+      temp_form: [['Form','temp_form'],['Button','temp_button'],['Input','temp_input']]
     };
     
     
