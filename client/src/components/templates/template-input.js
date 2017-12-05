@@ -1,6 +1,5 @@
 let templateInput = `
 import React, { Component } from 'react';
-import Button from './button';
 
 class Input extends Component {
   constructor(props) {
