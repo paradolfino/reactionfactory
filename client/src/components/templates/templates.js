@@ -283,4 +283,4 @@ const temp_input = (state,inputString) => {
   );
 }
 
-export {temp_form, temp_button};
+export {temp_form, temp_button, temp_input};
