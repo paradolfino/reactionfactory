@@ -1,0 +1,35 @@
+#page-factory-button {
+    padding-top: 350px;
+    align-items: center;
+    overflow-y: scroll;
+    div {
+        position: relative;
+        padding-bottom: 50px;
+        #form-container {
+            
+            height: 100%;
+            width: 100%;
+            
+            form {
+                display: inline-block;
+                
+                input {
+                    
+                    margin: 2px;
+                    height: 25px;
+                    font-size: 16px;
+                    text-align: center;
+                    border: 10px solid white;
+                    border-radius: 30px;
+                }
+            }
+        }
+        
+        
+
+    }
+}
+
+#hoverclass {
+    
+}
