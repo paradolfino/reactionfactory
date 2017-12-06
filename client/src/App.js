@@ -1,6 +1,7 @@
 /////////////////////////////////////////
 import React, { Component } from 'react';
 import './styles/css/App.css';
+import $ from 'jquery';
 /////////////////////////////////////////
 //pages//
 import Home from './components/pages/home';

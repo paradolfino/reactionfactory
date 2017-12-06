@@ -1,16 +1,16 @@
-#page-factory {
+#page-factory-button {
   padding-top: 350px;
   align-items: center;
   overflow-y: scroll; }
-  #page-factory div {
+  #page-factory-button div {
     position: relative;
     padding-bottom: 50px; }
-    #page-factory div #form-container {
+    #page-factory-button div #form-container {
       height: 100%;
       width: 100%; }
-      #page-factory div #form-container form {
+      #page-factory-button div #form-container form {
         display: inline-block; }
-        #page-factory div #form-container form input {
+        #page-factory-button div #form-container form input {
           margin: 2px;
           height: 25px;
           font-size: 16px;
@@ -18,11 +18,34 @@
           border: 10px solid white;
           border-radius: 30px; }
 
+#page-factory-form {
+  padding-top: 350px;
+  align-items: center;
+  overflow-y: scroll; }
+  #page-factory-form div {
+    position: relative;
+    padding-bottom: 50px; }
+    #page-factory-form div #form-container {
+      height: 100%;
+      width: 100%; }
+      #page-factory-form div #form-container form {
+        display: inline-block; }
+        #page-factory-form div #form-container form input {
+          margin: 2px;
+          height: 25px;
+          font-size: 16px;
+          text-align: center;
+          border: 10px solid white;
+          border-radius: 30px; }
+
+#display-form {
+  margin: auto; }
+
 #page-output {
   align-items: center;
   overflow-y: scroll; }
   #page-output #output-container {
-    margin-top: 900px; }
+    margin-top: 500px; }
     #page-output #output-container div {
       text-align: left !important; }
 

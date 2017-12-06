@@ -15,7 +15,7 @@ class ButtonFactory extends Component{
 
   render() {
     return (
-      <div id="page-factory" className="page">
+      <div id="page-factory-form" className="page">
         <div>
           <h3>Form Options</h3>
           <FormForm onChange={this.props.inputHandler} />
