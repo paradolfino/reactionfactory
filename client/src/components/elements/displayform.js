@@ -4,6 +4,7 @@ import DisplayButton from './displaybutton';
 import DisplayInput from './displayinput';
 import DisplayText from './displaytextarea';
 
+import $ from 'jquery';
 class DisplayForm extends Component {
     constructor(props) {
         super(props);
@@ -46,8 +47,16 @@ class DisplayForm extends Component {
 
 
     componentDidMount() {
+        let absolutePad = $('#page-factory-form').css('padding-top');
+        let currPad;
         this.syncDef();
         console.log(this.props.outputType);
+        $('#incPad').click(()=>{
+           
+        });
+        $('#decPad').click(()=>{
+           
+        });
     }
 
     componentDidUpdate() {
@@ -65,7 +74,7 @@ class DisplayForm extends Component {
     render() {
         return (
             <div>
-            <h4>Add a field: <button name='addInput' value='add' onClick={this.onClick} >+</button><button name='delInput' value='del' onClick={this.onClick} >-</button></h4><h4>Form Padding-Top:<button name='incPad' value='inc' onClick={this.onClick} >+</button><button name='decPad' value='dec' onClick={this.onClick} >-</button></h4>
+            <h4>Add a field: <button name='addInput' value='add' onClick={this.onClick} >+</button><button name='delInput' value='del' onClick={this.onClick} >-</button></h4><h4>Form Padding-Top:<button id='incPad' name='incPad' value='inc' onClick={this.onClick} >+</button><button id='decPad' name='decPad' value='dec' onClick={this.onClick} >-</button></h4>
             <form id={this.props.id} action=''>
             
                 {this.stateRef.inputs.map((key)=>{
