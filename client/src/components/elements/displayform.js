@@ -48,14 +48,17 @@ class DisplayForm extends Component {
 
     componentDidMount() {
         let absolutePad = $('#page-factory-form').css('padding-top');
-        let currPad;
+        let pad;
         this.syncDef();
         console.log(this.props.outputType);
         $('#incPad').click(()=>{
-           
+           pad = parseInt($('#page-factory-form').css('padding-top'));
+           $('#page-factory-form').css('padding-top',`${pad + 5}px`);
         });
         $('#decPad').click(()=>{
-           
+            pad = parseInt($('#page-factory-form').css('padding-top'));
+            console.log(pad, absolutePad);
+            pad > absolutePad && $('#page-factory-form').css('padding-top',`${pad - 5}px`);
         });
     }
 
