@@ -14,13 +14,16 @@ class Output extends Component {
       }} onChange={this.onChange}/>`;
     });
 
+
+    //decides what code to show as preview - may change to allow preview of other components;
     this.props.state.outputType === 'temp_button'
     ? this.strOutput = temp_button(this.props.state,this.inputString) : this.strOutput = temp_form(this.props.state,this.inputString);
 
     this.content = {
       temp_button: temp_button(this.props.state,this.inputString),
       temp_form: temp_form(this.props.state,this.inputString),
-      temp_input: temp_input(this.props.state,this.inputString)
+      temp_input: temp_input(this.props.state,this.inputString),
+      temp_textarea: temp_textarea(this.props.state,this.inputString)
     };
   }
   render() {
