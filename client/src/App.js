@@ -13,10 +13,6 @@ import Output from './components/pages/output';
 import Header from './components/elements/header';
 import Footer from './components/elements/footer';
 
-
-/*work on this: need to create a template for input and wire it up - after which everything will be finished and ready for touch up on css
- */
-
 class App extends Component {
   constructor(props) {
     super(props);
