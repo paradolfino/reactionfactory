@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { temp_form, temp_button, temp_input } from "../templates/templates";
+import { temp_form, temp_button, temp_input, temp_textarea } from "../templates/templates";
 
 import DisplayButton from "../elements/displaybutton";
 

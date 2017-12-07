@@ -369,4 +369,4 @@ const temp_textarea = (state,inputString) => {
   );
 }
 
-export {temp_form, temp_button, temp_input};
+export {temp_form, temp_button, temp_input, temp_textarea};
