@@ -23,9 +23,7 @@ const temp_form = (state, inputString) => {
             \`,
           render: null,
           hover: null,
-          focus: \`
-          color: ${state.formFocColor}
-          background-color: ${state.formFocBg};\`,
+          focus: null,
           transitions: \`
             -webkit-transition: all ${state.transitionDur};
             -moz-transition: all ${state.transitionDur};
