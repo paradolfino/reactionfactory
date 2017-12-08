@@ -58,7 +58,7 @@ class DisplayInput extends Component {
 
     render() {
         return (
-            <p><input type='text' id={this.props.id} style={this.style}/></p>
+            <p><input type='text' id={this.props.id} style={this.style} value='Text'/></p>
         );
     }
 }
