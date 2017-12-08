@@ -18,7 +18,7 @@ class ButtonFactory extends Component {
         <div>
           <Form onChange={this.props.inputHandler} />
           <DisplayButton
-            id={"display-button"}
+            id="display-button"
             onClick={this.props.pageHandler}
             value={"Output.click"}
             state={this.props.state}

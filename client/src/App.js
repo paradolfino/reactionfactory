@@ -60,7 +60,7 @@ class App extends Component {
 
       //button stuff - for now
       outputType: '',
-      temp_button: ['Button'],
+      temp_button: ['Button','temp_button'],
       temp_form: [['Form','temp_form'],['Button','temp_button'],['Input','temp_input'],['TextArea','temp_textarea']]
     };
     
