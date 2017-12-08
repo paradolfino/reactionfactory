@@ -295,8 +295,8 @@ const temp_textarea = (state,inputString) => {
       this.active = 0;
       this.style = {
         default: \`
-          height: ${state.inputHt * 2};
-          width: ${state.inputWt * 2};
+          height: ${parseInt(state.inputHt) * 2}px;
+          width: ${parseInt(state.inputWt) * 2}px;
           color: ${state.inputColor};
           background-color: ${state.inputBg};
           cursor: pointer;
