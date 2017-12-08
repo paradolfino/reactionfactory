@@ -1,5 +1,5 @@
 #REACTION FACTORY TO DO
 
-Right now some of the generated source code returns NaN in some css values. Need to fix this.
+Code needs serious touch ups, but it is nearly ready to publish new features.
 
-Should be a priority.
+Need to touch up some styling also, and then need to migrate from Heroku to AWS.
