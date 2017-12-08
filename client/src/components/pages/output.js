@@ -8,16 +8,20 @@ class Output extends Component {
     super(props);
 
     this.inputString = "";
+    this.outputHeader = "";
     this.inputs = this.props.state.inputs.map(key => {
       this.inputString += `\n<Input id={'input'+${
         key
       }} onChange={this.onChange}/>`;
     });
-
-
     //decides what code to show as preview - may change to allow preview of other components;
-    this.props.state.outputType === 'temp_button'
-    ? this.strOutput = temp_button(this.props.state,this.inputString) : this.strOutput = temp_form(this.props.state,this.inputString);
+    if (this.props.state.outputType === 'temp_button') {
+      this.strOutput = temp_button(this.props.state,this.inputString);
+      this.outputHeader = 'Here is your button! Click to download or copy the source code directly.';
+    } else {
+      this.strOutput = temp_form(this.props.state,this.inputString);
+      this.outputHeader = 'Here are your generated components. Click each button to download the source .js';
+    }
 
     this.content = {
       temp_button: temp_button(this.props.state,this.inputString),
@@ -30,7 +34,7 @@ class Output extends Component {
     return (
       <div id="page-output" className="page">
         <div id="output-container">
-          <h3>{this.props.outputHeaderTop}</h3>
+          <h3>{this.outputHeader}</h3>
           {this.props.state[this.props.state.outputType].map(button => {
             return <DisplayButton
               key={button[0]}
@@ -42,7 +46,7 @@ class Output extends Component {
               text={button[0]}
             />;
           })}
-          <h3>{this.props.outputHeaderBot}</h3>
+          
           <hr />
           <div>
             <pre>{this.strOutput}</pre>
