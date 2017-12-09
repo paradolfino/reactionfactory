@@ -3,8 +3,8 @@ import React from 'react';
 const FormForm = (props) => {
     return (
         <div id='form-container'>
-            <form action=''>
-                <p>Form Default Appearance|</p>
+            <form id='form-form'>
+                <p>Form Default Appearance</p>
                 <input name='formColor' onChange={props.onChange} placeholder='Text color!'/><br/>
                 <input name='formBg' onChange={props.onChange} placeholder='Background color!'/><br/>
                 <input name='formHt' onChange={props.onChange} placeholder='Height!'/><br/>
@@ -13,7 +13,7 @@ const FormForm = (props) => {
                 <input type="radio" name="formBorderRadius" value="30px" onChange={props.onChange}/>Rounded
                 <input type="radio" name="formBorderRadius" value="15px 30px" onChange={props.onChange}/>Two Corners<br/>
             </form>
-            <form action=''>
+            <form id='form-input'>
                 <p>Input Default Appearance</p>
                 <input name='inputColor' onChange={props.onChange} placeholder='Text color!'/><br/>
                 <input name='inputBg' onChange={props.onChange} placeholder='Background color!'/><br/>

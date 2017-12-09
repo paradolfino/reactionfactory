@@ -29,7 +29,8 @@
       height: 100%;
       width: 100%; }
       #page-factory-form div #form-container form {
-        display: inline-block; }
+        display: inline-block;
+        margin-right: 10px; }
         #page-factory-form div #form-container form input {
           margin: 2px;
           height: 25px;
