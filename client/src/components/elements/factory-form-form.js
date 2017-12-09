@@ -4,7 +4,7 @@ const FormForm = (props) => {
     return (
         <div id='form-container'>
             <form action=''>
-                <p>Form Default Appearance</p>
+                <p>Form Default Appearance|</p>
                 <input name='formColor' onChange={props.onChange} placeholder='Text color!'/><br/>
                 <input name='formBg' onChange={props.onChange} placeholder='Background color!'/><br/>
                 <input name='formHt' onChange={props.onChange} placeholder='Height!'/><br/>

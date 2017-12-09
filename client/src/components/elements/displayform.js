@@ -47,6 +47,8 @@ class DisplayForm extends Component {
 
 
     componentDidMount() {
+        $('#page-factory-form').css('padding-top', 100);
+        $('.page').css('height',1300);
         let absolutePad = $('#page-factory-form').css('padding-top');
         let pad;
         this.syncDef();
