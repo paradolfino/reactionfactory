@@ -6,9 +6,10 @@ The components will possess generated logic and will only need to be wired into 
 
 Current component types supported:
 -Buttons
+-Forms
 
 Currently working on:
--Forms
+-Deployment to AWS
 
 Next planned micro-changes:
 -More style options
